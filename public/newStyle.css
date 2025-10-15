@@ -1,0 +1,22 @@
+body {
+  background-color: #eef2f7;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  background: #fff;
+  border-radius: 12px;
+}
+
+.form-floating label {
+  color: #6c757d;
+}
+
+.btn {
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}

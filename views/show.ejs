@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= data.name %> - The Gleary</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container my-5">
+    <div class="card shadow-lg border-0">
+      <img src="<%= data.image %>" class="card-img-top" alt="Image" style="max-height: 500px; object-fit: cover;">
+      <div class="card-body">
+        <h2 class="card-title fw-bold mb-3 text-primary text-center"><%= data.name %></h2>
+        <p class="card-text text-secondary"><%= data.des %></p>
+        <p class="text-muted small">📅 Posted on: <%= data.Date ? data.Date.toString().split(' ').slice(0, 5).join(' ') : 'No date' %></p>
+        <div class="d-flex justify-content-between mt-4">
+          <a href="/gleary" class="btn btn-outline-secondary">⬅ Back</a>
+          <a href="/gleary/<%= data._id %>/edit" class="btn btn-outline-warning">✏ Edit</a>
+          <form method="POST" action="/gleary/<%= data._id %>?_method=DELETE">
+            <button class="btn btn-outline-danger">🗑 Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
